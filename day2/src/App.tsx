@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Table from './components/Table';
+import Table from './components/Table/Table';
+import List from './components/List/List';
 import './App.css';
 
 const data = require('./data/lezione1.json');
@@ -37,7 +38,7 @@ function App() {
         <button onClick={() => {onSearch()}}>Search</button>
       </p>
       
-      <Table books={books}/>
+      <List books={books}/>
     </div>
   );
 }

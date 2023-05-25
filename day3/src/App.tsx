@@ -1,43 +1,36 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, useEffect } from 'react';
 
 import './App.css';
 import Card from './components/Card/Card';
 import Table from './components/Table/Table';
 import Book from './models/bookModel';
-
-const data = require('./data/lezione1.json');
+import useBooks from './useBooks';
 
 function App() {
-    const [books, setBooks] = useState<Book[]>(data);
     const [authorFilter, setAuthorFilter] = useState('');
     const [titleFilter, setTitleFilter] = useState('');
-
-    const onChangeAuthor = (event: ChangeEvent<HTMLInputElement>) => {
-        setAuthorFilter(event.target.value);
-    };
-
-    const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
-        setTitleFilter(event.target.value);
-    }
-
-    const onSearch = () => {
-        setBooks(() => {
-            return data.filter(
-                (b: any) => (b.title.toLowerCase().includes(titleFilter.toLowerCase())) && (b.author.toLowerCase().includes(authorFilter.toLowerCase()))
-            );
-        });
-    }
+    const [books, loading] = useBooks(authorFilter, titleFilter);
 
     return (
         <div className="app-body">
             <h1 className="title">Books Catalog</h1>
             <div className="filters">
-                <p>Filters:</p>
-                <input type="text" value={authorFilter} onChange={(e) => onChangeAuthor(e)} placeholder={'author'} />
-                <input type="text" value={titleFilter} onChange={(e) => { onChangeTitle(e) }} placeholder={'title'} />
-                <button className="btn btn-primary" onClick={() => { onSearch() }}>Search</button>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.currentTarget);
+                    const author = formData.get('author') as string;
+                    const title = formData.get('title') as string;
+
+                    setAuthorFilter(author);
+                    setTitleFilter(title);
+                }}>
+                    <p>Filters:</p>
+                    <input type="text" name="author" placeholder={'author'} />
+                    <input type="text" name="title" placeholder={'title'} />
+                    <button className="btn btn-primary" type='submit'>Search</button>
+                </form>
             </div>
-            <Table books={books} />
+            <Table books={books as Book[]} loading={loading as boolean} />
             {/* <div className="cards">
                 {
                     books.map((book: Book, i: number) => (

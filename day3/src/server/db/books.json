@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "title": "Gullivers Travels",
+      "author": "Blanchard Farmer",
+      "publisher": "Geekus",
+      "language": "English",
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "Associate Professor",
+      "author": "Middleton Webster",
+      "publisher": "Zillatide",
+      "language": "English",
+      "available": false
+    },
+    {
+      "id": 3,
+      "title": "Don Quijote De La Mancha",
+      "author": "Matthews Mosley",
+      "publisher": "Sulfax",
+      "language": "English",
+      "available": false
+    },
+    {
+      "id": 4,
+      "title": "One Hundred Years of Solitude",
+      "author": "Judy Morrow",
+      "publisher": "Ozean",
+      "language": "English",
+      "available": true
+    },
+    {
+      "id": 5,
+      "title": "Gullivers Travels",
+      "author": "Kris Woodard",
+      "publisher": "Niquent",
+      "language": "Spanish",
+      "available": true
+    },
+    {
+      "id": 6,
+      "title": "The Divine Comedy",
+      "author": "Hodge Buck",
+      "publisher": "Synkgen",
+      "language": "Spanish",
+      "available": true
+    },
+    {
+      "id": 7,
+      "title": "Odyssey",
+      "author": "Alyssa Levy",
+      "publisher": "Fuelworks",
+      "language": "Italian",
+      "available": true
+    },
+    {
+      "id": 8,
+      "title": "Attornery",
+      "author": "Jewel Pope",
+      "publisher": "Lunchpod",
+      "language": "Spanish",
+      "available": true
+    },
+    {
+      "id": 9,
+      "title": "Copywriter",
+      "author": "Boyer Ford",
+      "publisher": "Frenex",
+      "language": "Spanish",
+      "available": true
+    },
+    {
+      "id": 10,
+      "title": "Madame Bovary",
+      "author": "Kitty Thompson",
+      "publisher": "Bleeko",
+      "language": "Italian",
+      "available": true
+    }
+]

@@ -5,7 +5,6 @@ export default function Server() {
     createServer({
         routes() {
             this.get("api/books", (schema, request) => {
-                console.log(request);
                 const { queryParams } = request;
 
                 if (Object.keys(queryParams).length > 0) {
@@ -16,11 +15,11 @@ export default function Server() {
                             b.author.toLowerCase().includes(author.toLowerCase())
                     );
                 }
-                // {
-                //     timing: 5000;
-                // }
 
                 return BOOKS;
+            },
+            {
+                //timing: 2000
             });
         }
     })

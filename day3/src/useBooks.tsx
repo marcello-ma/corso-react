@@ -7,13 +7,13 @@ export default function useBooks(author = '', title = '') {
     const [ status, setStatus ] = useState('unloaded');
 
     useEffect(() => {
-        requestBooks();
+        requestBooks(author, title);
 
-        async function requestBooks() {
+        async function requestBooks(author: string, title: string) {
             setLoading(true);
-            // const searchParams = new URLSearchParams({ author: author, title: title })
-            // const res = await fetch("api/books?" + searchParams);
-            const res = await fetch("api/books");
+            const searchParams = new URLSearchParams({ author: author, title: title })
+            const res = await fetch("api/books?" + searchParams);
+            // const res = await fetch("api/books");
             const json = await res.json();
             setBooks(json);
             setLoading(false);

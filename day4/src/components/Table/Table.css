@@ -1,0 +1,9 @@
+.btn-table {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+
+.table-actions > * {
+    margin-right: 10px;
+}

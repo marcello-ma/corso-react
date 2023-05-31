@@ -1,0 +1,40 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.app-body {
+    padding: 50px 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.filters > * {
+    margin-right: 20px;
+}
+
+.filters-input {
+    max-width: 300px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
